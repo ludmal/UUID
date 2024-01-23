@@ -6,54 +6,30 @@ sequence. If more than 1 sequence exists with the longest length, output
 the earliest one. You may develop supporting functions as many as you
 find reasonable.
 
+rewrite this professionaly without any grammer mistakes
 ## Solution Design
+* Decision to make a Console App instead of a library is a simple choice and theres no reason to back up, it is I just like to print in console
+* UUID solution has been created with two projects
+* It is a good practice to have a seperate project for tests hence created UUID.Tests
+* A static Utility class is created called "Util" with static method. This is reduce the memory allocation and thread safety for simple cpu bound operations. We could have use Aync if the operation is invovles i/o bound but not in this case. We also could have write a Integer extensions function to simply use this one but not required in this simple test 
+* Seperted out private function ```SplitToIntegers``` to encapsulate certain logic to split string. This is written as functional style to be a pure function without any side effect
+* Error handling is not required since both the methods are done as Pure functions without any side effects
+* Performance + Memory allocation is considerd with static functions, writing it more functional(SplitToIntegers) and Enumerable.Empty<int>().ToList()
 
-### Console Application Choice
-The decision to develop a Console App instead of a library is straightforward, and there is no need for justification. It is solely based on the preference to print output in the console.
-
-### UUID Solution
-The UUID solution has been implemented using two separate projects.
-
-### Test Project
-In accordance with best practices, a separate project named "UUID.Tests" has been created for testing purposes.
-
-### Utility Class
-A static Utility class named "Util" with static methods has been created. This design choice aims to minimize memory allocation and enhance thread safety for simple CPU-bound operations. While asynchronous programming (Async) could have been considered for I/O-bound operations, it is not applicable in this particular case. Additionally, we have the option to create an Integer extension function for simplicity, although it is not necessary for this straightforward test.
-
-### Encapsulation of Logic
-The private function `SplitToIntegers` has been separated to encapsulate specific logic related to string splitting. This function is implemented in a functional style to maintain purity and avoid side effects.
-
-### Error Handling
-Error handling has been omitted from the code since both methods are designed as pure functions without any side effects.
-
-### Performance and Memory Considerations
-Performance and memory allocation have been taken into account by using static functions, writing the `SplitToIntegers` function in a more functional style, and leveraging `Enumerable.Empty<int>().ToList()`.
-
-## Documentation
-
-### Code Comments
-Code comments have been added to explain the rationale behind specific decisions made during the coding process. Some comments are used for demonstration purposes but may not be necessary in a real-world coding scenario.
-
-### Self-Explanatory Code
-The belief here is that writing self-explanatory code can reduce the need for excessive comments in the codebase. 
+## Documentations
+* Added code comments to explain why I have taken certain decisions when I do the code.
+* Also some of the comments purely to demonstrate but no value in real-life coding
+* I peronsally believe, if you write self explanaroy code then can avoid lot of comments in the code
 
 ## Unit Testing
-
-### Test Coverage
-A comprehensive set of both negative and positive tests have been included in the test suite.
-
-### Naming Conventions
-Standard unit testing naming conventions have been followed, aligning with personal preferences.
-
-### Testing Framework
-The xUnit testing framework has been utilized, allowing the use of Theory with Fact to test with multiple data sets. While Shouldy could have been an alternative for validation, a straightforward Assert approach has been employed.
+* Have added both negative/positive tests
+* I have used a standard unit tests naming conventions with my personal prefference
+* xUnit is used to easily use Theory with Fact to test with multiple data sets
+* We could have used Shouldy for validation but left with a simple Assert
 
 ## Version Control
-
-### Git Flow
-Git flow has been exemplified by initially creating a branch for the purpose of illustrating the version control process and pull request (PR) workflow.
-
-### Sequential Git Commits
-Each minor task has been committed sequentially, adhering to the standard commit message structure, which includes "feat," "fix," "chore," or "refactor" followed by a descriptive message.
+* Initialy created a branch to demonstrate git flow and PR
+* For every simple task I have added a sequential git commit
+* All the git commits follows standard feat: fix: chore: refactor: message structure
 
 
