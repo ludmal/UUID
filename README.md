@@ -16,7 +16,7 @@ the earliest one.
 * Decision to make a Console App instead of a library is a simple choice and there's no back up reason, it is I just like to print in console :-)
 * UUID solution has been created with two projects
 * It is a good practice to have a separate project for tests hence created UUID.Tests
-* A static Utility class is created called "Util" with static method. This is reduce the memory allocation and thread safety for simple cpu bound operations. We could have used ```Async``` if the operation is involved i/o bound but not in this case. We also could have write a Integer extensions function to simply use this one but not required in this simple test 
+* A static Utility class is created called "Util" with static method. This is reduce the memory allocation and thread safety for simple cpu bound operations. We could have used ```Async``` if the operation is involved i/o bound but not in this case. We also could have write a Integer extensions function but not required in this simple test 
 * Separated out private function ```SplitToIntegers``` to encapsulate certain logic to split string. This is written as functional style to be a pure function without any side effect
 * Error handling is not required since both the methods are done as Pure functions without any side effects
 * Performance + Memory allocation is considered with static functions, writing it more functional(```SplitToIntegers```) and ```Enumerable.Empty<int>().ToList()```
