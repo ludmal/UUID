@@ -13,7 +13,7 @@ the earliest one.
   ![image](https://github.com/ludmal/UUID/assets/130307/8e051abe-dacb-4e33-a896-173cf4a0bf31)
 
 ## Solution Design
-* Decision to make a Console App instead of a library is a simple choice and there's no reason to back up, it is I just like to print in console
+* Decision to make a Console App instead of a library is a simple choice and there's no back up reason, it is I just like to print in console :-)
 * UUID solution has been created with two projects
 * It is a good practice to have a separate project for tests hence created UUID.Tests
 * A static Utility class is created called "Util" with static method. This is reduce the memory allocation and thread safety for simple cpu bound operations. We could have used ```Async``` if the operation is involved i/o bound but not in this case. We also could have write a Integer extensions function to simply use this one but not required in this simple test 
