@@ -9,25 +9,29 @@ public static class Utils
         if (!sequence.Any())
             return "";
 
-        var longestSubsequence = new List<int>();
-        var currentSubsequence = new List<int>();
-
-        foreach (var num in sequence)
-        {
-            if (currentSubsequence.Count == 0 || num > currentSubsequence.Last())
-            {
-                currentSubsequence.Add(num);
-
-                if (currentSubsequence.Count > longestSubsequence.Count)
+        var longestSubsequence = sequence.Aggregate(
+                new { CurrentSubsequence = new List<int>(), LongestSubsequence = new List<int>() },
+                (acc, num) =>
                 {
-                    longestSubsequence = new List<int>(currentSubsequence);
-                }
-            }
-            else
-            {
-                currentSubsequence = new List<int> { num };
-            }
-        }
+                    var currentSubsequence = acc.CurrentSubsequence;
+                    var longestSubsequence = acc.LongestSubsequence;
+
+                    if (!currentSubsequence.Any() || num > currentSubsequence.Last())
+                    {
+                        currentSubsequence.Add(num);
+                        longestSubsequence = currentSubsequence.Count > longestSubsequence.Count
+                            ? currentSubsequence
+                            : longestSubsequence;
+                    }
+                    else
+                    {
+                        currentSubsequence.Clear();
+                        currentSubsequence.Add(num);
+                    }
+
+                    return new { CurrentSubsequence = currentSubsequence, LongestSubsequence = longestSubsequence };
+                })
+            .LongestSubsequence;
 
         return string.Join(" ", longestSubsequence);
     }
