@@ -7,7 +7,7 @@ the earliest one.
 
 ## How to verify the functionality
 * Simply open the solution and navigate to UUID.Test Project
-* Goto the ```UtilTests``` file and Select ```Run All`` from your test runner window
+* Goto the ```UtilTests``` file and Select ```Run All``` from your test runner window
 * See the results
 
   ![image](https://github.com/ludmal/UUID/assets/130307/8e051abe-dacb-4e33-a896-173cf4a0bf31)
