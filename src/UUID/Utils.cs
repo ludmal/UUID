@@ -4,8 +4,8 @@ public static class Utils
 {
     public static string FindLongestIncreasingSubsequence(string input)
     {
-        var sequence = SplitStringIntoListOfInt(input);
-        
+        var sequence = SplitToIntegers(input);
+
         if (!sequence.Any())
             return "";
 
@@ -32,21 +32,10 @@ public static class Utils
         return string.Join(" ", longestSubsequence);
     }
 
-    private static List<int> SplitStringIntoListOfInt(string input)
-    {
-        if (string.IsNullOrWhiteSpace(input))
-            return Enumerable.Empty<int>().ToList();
-
-        var sequence = input.Split(' ');
-        var numbers = new List<int>();
-
-        foreach (var s in sequence)
-        {
-            if (int.TryParse(s, out var number))
-                numbers.Add(number);
-        }
-
-        return numbers;
-    }
-    
+    private static List<int> SplitToIntegers(string input) => string.IsNullOrWhiteSpace(input)
+        ? Enumerable.Empty<int>().ToList()
+        : input.Split(' ')
+            .Where(s => int.TryParse(s, out _))
+            .Select(int.Parse)
+            .ToList();
 }
