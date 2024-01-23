@@ -6,6 +6,13 @@ sequence. If more than 1 sequence exists with the longest length, output
 the earliest one. You may develop supporting functions as many as you
 find reasonable.
 
+## How to verify the functionality
+* Simply open the solution and navigate to UUID.Test Project
+* Goto the ```UtilTests``` file and Select ```Run All`` from your test runner window
+* See the results
+
+  ![image](https://github.com/ludmal/UUID/assets/130307/8e051abe-dacb-4e33-a896-173cf4a0bf31)
+
 ## Solution Design
 * Decision to make a Console App instead of a library is a simple choice and there's no reason to back up, it is I just like to print in console
 * UUID solution has been created with two projects
