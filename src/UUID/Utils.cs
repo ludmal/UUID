@@ -7,7 +7,7 @@ public static class Utils
         var sequence = SplitToIntegers(input);
 
         if (!sequence.Any())
-            return "";
+            return string.Empty;
 
         var longestSubsequence = sequence.Aggregate(
                 new { CurrentSubsequence = new List<int>(), LongestSubsequence = new List<int>() },
@@ -25,8 +25,7 @@ public static class Utils
                     }
                     else
                     {
-                        currentSubsequence.Clear();
-                        currentSubsequence.Add(num);
+                        currentSubsequence = new List<int> { num };
                     }
 
                     return new { CurrentSubsequence = currentSubsequence, LongestSubsequence = longestSubsequence };
