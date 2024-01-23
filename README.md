@@ -30,7 +30,7 @@ the earliest one.
 * Have added both negative/positive tests
 * I have used a standard unit tests naming conventions with my personal preference
 * xUnit is used to easily use Theory with Fact to test with multiple data sets
-* We could have used Shouldy for validation but left with a simple Assert
+* We could have used Shouldly.Net for validation but left with a simple Assert
 
 ## Version Control
 * Initially created a branch to demonstrate git flow and PR
